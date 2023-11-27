@@ -1,0 +1,24 @@
+server:
+  port: 8085
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/layouts/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    check-template-location: true
+    enable-spring-el-compiler: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecount
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true

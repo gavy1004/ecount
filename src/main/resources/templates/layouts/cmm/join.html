@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Join</title>
+</head>
+<body>
+
+
+    <div class="modal-body">
+        <div class="card custom-card border-0 rounded-lg p-md-4 py-4 mb-2 mi">
+            <!-- 회원가입 form start -->
+            <form id="joinForm" name="joinForm" onsubmit="return false";>
+                <div class="row px-3"></div>
+                <div class="col-xl-12 col-12">
+                    <div class="row mt-xl-4">
+                        <label class="col-xl-2 col-12 form-label mt-1 text-16px color-9E9E9E" for="joinId">아이디</label>
+                        <div class="d-flex col-xl-10">
+                            <div class="col-xl-7 col-9">
+                                <input type="text" class="form-control" name="userId" id="joinId">
+                            </div>
+                            <button type="button" class="ms-1 ms-xl-2 col-2 col-xl-1 btn sub-confirm-btn text-14px color-484848" id="idDupCheckBtn">중복확인</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-2"></div>
+                            <div class="col-xl-10 col-12">
+                                <div id="idHelpMessage" class="ms-1 mt-1 small"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <label class="col-xl-2 col-12 form-label mt-2 text-16px color-9E9E9E" for="joinPwd">비밀번호</label>
+                        <div class="col-xl-6 col-12">
+                            <input type="password" class="form-control" name="joinPwd" id="joinPwd">
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-2"></div>
+                            <div class="col-xl-10 col-12">
+                                <div id="passwordHelpMessage" class="ms-1 mt-1 small"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <label class="col-xl-2 col-12 form-label mt-2 text-16px color-9E9E9E" for="joinPwdChk">비밀번호 확인</label>
+                        <div class="col-xl-6 col-12">
+                            <input type="password" class="form-control" name="joinPwdChk" id="joinPwdChk">
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-2"></div>
+                            <div class="col-xl-10 col-12">
+                                <div id="passwordHelpMessage2" class="ms-1 mt-1 small"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-xl-4 mt-2">
+                        <label class="col-xl-2 col-12 form-label mt-2 text-16px color-9E9E9E" for="joinNm">이름</label>
+                        <div class="col-xl-6 col-12">
+                            <input type="text" class="form-control" name="userName" id="joinNm">
+                        </div>
+                    </div>
+
+                    <div class="row pe-0">
+                        <div class="col-xl-2"></div>
+                        <div class="col-xl-6 col-12 d-flex pe-0 mt-1">
+                            <div class="d-inline text-14px color-9E9E9E mt-1 ms-2">ⓘ</div>
+                            <div id="nameHelpMessage" class="d-inline mt-1 ms-1 text-14px color-9E9E9E">
+                                실명으로 가입하지 않은 경우 데이터 제공신청, 분쟁조정신청 등 일부 서비스에 대해 불이익이 있을 수 있습니다
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-xl-4 mt-2">
+                        <label class="col-xl-2 col-12 form-label mt-1 text-16px color-9E9E9E" for="joinMail">이메일</label>
+                        <div class="d-flex col-xl-10">
+                            <div class="col-xl-7 col-9">
+                                <input type="text" class="form-control" name="userMail" id="joinMail">
+                            </div>
+                            <button type="button" class="ms-1 ms-xl-2 col-2 col-xl-1 btn sub-confirm-btn text-14px color-484848" id="emailConfirmBtn">이메일인증</button>
+                        </div>
+                    </div>
+
+                    <div class="row pe-0 pe-xl-3">
+                        <div class="col-xl-2"></div>
+                        <div class="col-xl-8 col-12 pe-0 pe-xl-3">
+                            <div class="m-1">
+                                <input type="checkbox" id="emailReceptionAgreeCheckbox">
+                                <label for="emailReceptionAgreeCheckbox" class="text-16px color-484848 ms-1">이메일 수신 동의</label>
+                            </div>
+                            <div class="col d-flex mb-1">
+                                <div class="d-inline text-14px color-9E9E9E mt-1 ms-2">ⓘ</div>
+                                <div class="d-inline mt-1 ms-1 text-14px color-9E9E9E">
+                                    수신거부 시 일부 서비스에 제한이 있을 수 있습니다.
+                                    비밀번호 초기화 메일 수신 등에 반드시 필요한 정보이므로 정확히 이메일 주소를 입력해주세요.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="emailConfirmDiv" class="row mt-4" style="display: none;">
+                        <label for="emailConfirmInput" class="col-xl-2 col-12 form-label mt-2 text-16px color-9E9E9E text-letter-narrow">이메일 인증번호</label>
+                        <div class="d-flex col-xl-10">
+                            <div class="col-xl-7 col-9">
+                                <input type="text" class="col form-control" id="emailConfirmInput">
+                            </div>
+                            <button type="button" class="ms-1 ms-xl-2 col-2 col-xl-1 btn sub-confirm-btn text-14px color-484848" id="emailConfirmNumberBtn">인증확인
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-2"></div>
+                            <div class="col-xl-10 col-12">
+                                <small id="emailConfirmHelpMessage" class="ms-1 mt-1 small"></small>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+            <!-- 회원가입 form end -->
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="joinModalCanBtn">취소</button>
+        <button type="button" class="btn btn-primary" id="joinBtn">회원가입</button>
+    </div>
+</body>
+</html>
